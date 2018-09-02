@@ -2,7 +2,7 @@
 
 This project is an example of using Django and the django-datatables-view plugin, it can be used as a boiler plate or just to get a better understanding of how to use this great plugin.
 
-In this sample project I will demonstrate how to get up and running django-datatables-view as well as moving past that with some additional technologies which are popular at the moement and how to combine them all to make a working Django site. 
+In this sample project I will demonstrate how to get up and running django-datatables-view as well as moving past that with some additional technologies which are popular at the moment and how to combine them all to make a working Django site. 
 
 In this example I have used two separate databases, the first for the Django admin and authentication and the other is a read only database which could be a real life scenario when you first want to start working with Django.
 
@@ -13,91 +13,58 @@ I have only tested this project with Python 3.x (specifically 3.7.0b3), running 
 ## Getting Started
 
 1. Clone this repository
+```
+git clone git@github.com:dre2004/django-datatables-boilerplate.git
+```
+2. Install Django and other requirements
+```
+pip install -r requirements.txt
+```
+3. Download sample database (French towns) from [pgfoundry.org](http://pgfoundry.org/projects/dbsamples/). If you're using Postgres the following instructions should get you up and running.
+```
+$ tar zxvf french-towns-communes-francaises-1.0.tar.gz
+$ psql -U <INSERT YOUR DB USERNAME> -W postgres
 
-
-# Django 2.1.1
-# django-datatables-view
-# bootstrap 4.1.1
-# requirejs 2.3.5
-
-There is a sample database which you can use
+postgres=# create database towns;
+CREATE DATABASE
+postgres=# create user readonly with password 'securepass123!';
+postgres=# \c towns
+You are now connected to database "towns" as user "postgres"
+towns=# grant select on all tables in schema public to readonly;
+GRANT
+postgres=#\q
+```
+The commands above will need to be run as the postgres root user (typically postgres as seen in the example) or a user with the relevant privileges.
 
 ### Prerequisites
 
 What things you need to install the software and how to install them
 
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+1. [Python 3.x+](https://www.python.org/) - See Python site for platform specific instructions.
+2. A working database server, my personal preference is [Postgresql](https://www.postgresql.org/).
+3. Time and patients - This is a prerequisite for most things in life :).
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+This code isn't production ready, so deploy at your own risk. As a guide the minimum you will need to do to get this production ready will be to add authentication / authorization to the admin app and review and harden the settings.py.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* [Django 2.1.1](https://www.djangoproject.com/) - Python web framework
+* [django-datatables-view](https://bitbucket.org/pigletto/django-datatables-view/src/master/)
+* [bootstrap 4.1.1](https://getbootstrap.com/) - HTML, CSS and Javascript library
+* [requirejs 2.3.5](https://requirejs.org/) - Javascript file and module loader
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/dre2004/django-datatables-boilerplate/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* *Initial work* - [DRE2004](https://github.com/dre2004)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/dre2004/django-datatables-boilerplate/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
