@@ -1,0 +1,25 @@
+/* Datatables Styles */
+.top {
+    float: right;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.dt_top_rt {
+    float: right;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.dt_top_lt {
+    float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.bottom {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

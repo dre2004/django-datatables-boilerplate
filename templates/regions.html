@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n staticfiles %}
+{% block title %}Boiler plate datatables template{% endblock %}
+{% block extrahead %}<link rel="stylesheet" type="text/css" href="{% static "css/base.css"%}"/>{% endblock %}
+{% block content %}
+            <div class="card">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <div class="table table-responsive">
+                        <table id="datatable" class="table table-hover card-table">
+                            <thead>
+                                {% for column in view.columns %}<th>{{column|capfirst}}</th>
+                                {% endfor %}
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript">
+    var JSON_URL = "{% url 'RegionsJson' %}";
+    require(["{% static "js/regions.js" %}"]);
+</script>
+{% endblock %}

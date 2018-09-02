@@ -1,0 +1,8 @@
+# Directories
+__pycache__
+
+# Files
+*.py[cod]
+db.sqlite3
+model/migrations/0001_initial.py
+datatables_view/settings_local.py
