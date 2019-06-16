@@ -1,4 +1,4 @@
-Django==2.1.6
+Django==2.2.2
 django-datatables-view==1.16.0
 psycopg2==2.7.5
 pytz==2018.5
