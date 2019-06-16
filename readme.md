@@ -50,7 +50,7 @@ This code isn't production ready, so deploy at your own risk. As a guide the min
 
 ## Built With
 
-* [Django 2.1.1](https://www.djangoproject.com/) - Python web framework
+* [Django 2.2.2](https://www.djangoproject.com/) - Python web framework
 * [django-datatables-view](https://bitbucket.org/pigletto/django-datatables-view/src/master/)
 * [bootstrap 4.1.1](https://getbootstrap.com/) - HTML, CSS and Javascript library
 * [requirejs 2.3.5](https://requirejs.org/) - Javascript file and module loader
